@@ -25,3 +25,16 @@ if ( ! defined( 'WPINC' ) ) {
 define( 'VN_LINKS_WIDGET_VERSION', '0.0.1' );
 define( 'VN_LINKS_WIDGET_DIR', plugin_dir_path(__FILE__));
 define( 'VN_LINKS_WIDGET_URI', plugins_url('vn-links-widget'));
+
+require VN_LINKS_WIDGET_DIR . 'inc/class-vn-links-widget-init.php';
+
+/**
+ * Run a plugin
+ *
+ * @return void
+ */
+function vn_links_widget_run() {
+	$plugin = new Vn_Links_Widget_Init();
+}
+
+vn_links_widget_run();
