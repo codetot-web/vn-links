@@ -7,15 +7,15 @@
  * @since 0.0.1
  */
 
-class Vn_Links_Widget_Legacy_Widget extends WP_Widget {
+class Vn_Links_Legacy_Widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
-			'vn-links-widget',
-			__('VN Links Widget', 'vn-links-widget')
+			'vn-links',
+			__('VN Links', 'vn-links')
 		);
 
 		add_action( 'widgets_init', function() {
-			register_widget( 'Vn_Links_Widget_Legacy_Widget' );
+			register_widget( 'Vn_Links_Legacy_Widget' );
 		} );
 	}
 
@@ -28,7 +28,7 @@ class Vn_Links_Widget_Legacy_Widget extends WP_Widget {
 
         echo '<div class="textwidget">';
 
-        echo do_shortcode('[vn-links-widget]');
+        echo do_shortcode('[vn-links]');
 
         echo '</div>';
 
@@ -36,10 +36,10 @@ class Vn_Links_Widget_Legacy_Widget extends WP_Widget {
 	}
 
 	public function form( $instance ) {
-		$title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Website Links', 'vn-links-widget' );
+		$title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Website Links', 'vn-links' );
 		?>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php echo esc_html__( 'Title:', 'vn-links-widget' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php echo esc_html__( 'Title:', 'vn-links' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
         </p>
 		<?php

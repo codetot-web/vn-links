@@ -7,19 +7,19 @@
  * @since 0.0.1
  */
 
-class Vn_Links_Widget_Shortcode
+class Vn_Links_Shortcode
 {
     /**
      * Singleton instance
      *
-     * @var Vn_Links_Widget_Shortcode
+     * @var Vn_Links_Shortcode
      */
     private static $instance;
 
     /**
      * Get singleton instance.
      *
-     * @return Vn_Links_Widget_Shortcode
+     * @return Vn_Links_Shortcode
      */
     final public static function instance()
     {
@@ -36,7 +36,7 @@ class Vn_Links_Widget_Shortcode
 
     public function register_shortcodes()
     {
-        add_shortcode('vn-links-widget', array($this, 'render_shortcode'));
+        add_shortcode('vn-links', array($this, 'render_shortcode'));
     }
 
     public function render_shortcode()
@@ -51,16 +51,20 @@ class Vn_Links_Widget_Shortcode
 
         ob_start();
         if (!empty($links)) : ?>
-            <?php printf('<label for="vn-links" class="screen-reader-text">%s</label>', esc_html__('Click to redirect to another website', 'vn-links-widget')); ?>
-			<div class="vn-links__select-wrapper">
-				<select class="vn-links__select js-select" id="vn-links">
-					<?php
-					printf('<option value="">%s</option>', esc_html__('Select website', 'vn-links-widget'));
-					foreach ($links as $link_post) :
-						$link_value = get_post_meta($link_post->ID, '_links_url');
-						printf('<option value="%1$s">%2$s</option>', esc_url($link_value[0]), esc_attr($link_post->post_title));
-					endforeach; ?>
-				</select>
+			<div class="vn-links" data-app="vn-links">
+				<?php printf('<label for="vn-links" class="screen-reader-text">%s</label>', esc_html__('Click to redirect to another website', 'vn-links')); ?>
+				<div class="vn-links__select-wrapper">
+					<select class="vn-links__select js-select" id="vn-links">
+						<?php
+						printf('<option value="">%s</option>', esc_html__('Select website', 'vn-links'));
+						foreach ($links as $link_post) :
+							$link_value = get_post_meta($link_post->ID, '_links_url');
+							printf('<option value="%1$s">%2$s</option>', esc_url($link_value[0]), esc_attr($link_post->post_title));
+						endforeach; ?>
+					</select>
+					<span class="vn-links__icon"></span>
+				</div>
+				<div class="vn-links__notice js-notice"></div>
 			</div>
         <?php endif;
 

@@ -7,18 +7,18 @@
  * @since 0.0.1
  */
 
-class Vn_Links_Widget_Assets {
+class Vn_Links_Assets {
 	/**
 	 * Singleton instance
 	 *
-	 * @var Vn_Links_Widget_Assets
+	 * @var Vn_Links_Assets
 	 */
 	private static $instance;
 
 	/**
 	 * Get singleton instance.
 	 *
-	 * @return Vn_Links_Widget_Assets
+	 * @return Vn_Links_Assets
 	 */
 	public final static function instance()
 	{
@@ -38,6 +38,7 @@ class Vn_Links_Widget_Assets {
 	 * @return void
 	 */
 	public function frontend_assets() {
-		wp_enqueue_script('vn-links-widget', VN_LINKS_WIDGET_URI . '/assets/frontend.js', array(), VN_LINKS_WIDGET_VERSION, true);
+		wp_enqueue_style('vn-links', VN_LINKS_URI . '/assets/frontend.css', array(), VN_LINKS_VERSION);
+		wp_enqueue_script('vn-links', VN_LINKS_URI . '/assets/frontend.js', array(), VN_LINKS_VERSION, true);
 	}
 }
