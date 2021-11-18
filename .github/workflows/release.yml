@@ -20,5 +20,5 @@ jobs:
           rm -rf .github/ src/
           git add -A
           git commit -am "Release package"
-          git push -u origin master
+          git push -u origin production
 
