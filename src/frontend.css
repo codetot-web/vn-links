@@ -8,6 +8,13 @@
 	padding: 3px 7px;
 	appearance: none;
 	border: 0;
+	opacity: 1;
+	transition: opacity 0.3s;
+}
+
+.vn-links.is-loading {
+	pointer-events: none;
+	opacity: 0.65;
 }
 
 .vn-links__icon {

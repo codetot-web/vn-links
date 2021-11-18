@@ -112,12 +112,12 @@ class Vn_Links_Post_Types {
 	public function render_metabox( $post ) {
 		$existing_url = get_post_meta( $post->ID, '_' . $this->metabox_url_id, true );
 		?>
-		<p class="vn-links__row">
-			<label for="<?php echo esc_attr( $this->metabox_url_id ); ?>" class="screen-reader-text"><?php esc_html_e( 'URL', 'vn-links' ); ?></label>
+		<p class="vn-links__metabox">
+			<label class="vn-links__metabox__label" for="<?php echo esc_attr( $this->metabox_url_id ); ?>" class="screen-reader-text"><?php esc_html_e( 'URL', 'vn-links' ); ?></label>
 			<input
 				type="url"
-				class="vn-links__input"
-				value="<?php echo esc_attr( $existing_url ); ?>"
+				class="vn-links__metabox__input"
+				value="<?php echo sanitize_text_field( $existing_url ); ?>"
 				placeholder="<?php echo esc_html( 'https://' ); ?>"
 				name="<?php echo esc_attr( $this->metabox_url_id ); ?>"
 				id="<?php echo esc_attr( $this->metabox_url_id ); ?>"

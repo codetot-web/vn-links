@@ -8,7 +8,9 @@
  * Plugin Name:       Vietnam Links
  * Plugin URI:        https://codetot.com
  * Description:       Manage external links and display links as dropdown in a single widget or block. One of most required feature for all government sites in Vietnam.
- * Version:           0.0.1
+ * Requires at least: 5.0
+ * Requires PHP:      7.0
+ * Version:           0.0.2
  * Author:            CODE TOT JSC
  * Author URI:        https://codetot.com
  * License:           GPL-2.0+
@@ -22,7 +24,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define( 'VN_LINKS_VERSION', '0.0.1' );
+define( 'VN_LINKS_VERSION', '0.0.2' );
 define( 'VN_LINKS_DIR', plugin_dir_path(__FILE__));
 define( 'VN_LINKS_URI', plugins_url('vn-links'));
 

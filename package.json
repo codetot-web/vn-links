@@ -1,6 +1,6 @@
 {
   "name": "vn-links",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "src/frontend.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "build": "wp-scripts build src/frontend.js --output-path=assets",
     "format": "wp-scripts format src/frontend.js",
     "lint:css": "wp-scripts lint-style src/frontend.js",
-    "lint-js": "wp-scripts lint-js src/frontend.js"
+    "lint:js": "wp-scripts lint-js src/frontend.js"
   },
   "repository": {
     "type": "git",

@@ -52,7 +52,7 @@ class Vn_Links_Shortcode
         ob_start();
         if (!empty($links)) : ?>
 			<div class="vn-links" data-app="vn-links">
-				<?php printf('<label for="vn-links" class="screen-reader-text">%s</label>', esc_html__('Click to redirect to another website', 'vn-links')); ?>
+				<?php printf('<label for="vn-links" class="vn-links__label screen-reader-text">%s</label>', esc_html__('Click to redirect to another website', 'vn-links')); ?>
 				<div class="vn-links__select-wrapper">
 					<select class="vn-links__select js-select" id="vn-links">
 						<?php
@@ -64,7 +64,6 @@ class Vn_Links_Shortcode
 					</select>
 					<span class="vn-links__icon"></span>
 				</div>
-				<div class="vn-links__notice js-notice"></div>
 			</div>
         <?php endif;
 
