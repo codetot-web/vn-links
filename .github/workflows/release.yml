@@ -15,10 +15,16 @@ jobs:
         run: |
           git config --global user.name "CODE TOT JSC"
           git config --global user.email "dev@codetot.com"
-      - name: Remove unused files
+      - name: Remove unused files and prepare package
         run: |
           rm -rf .github/ src/
           git add -A
-          git commit -am "Release package"
-          git push -u origin production
-
+          git commit -am "Prepare production package"
+          git commit -m "Prepare production package"
+          git push origin HEAD:production-temp --force
+      - name: Release package
+        run: |
+          git reset --hard origin/production
+          git merge origin/production-temp --no-ff --no-edit -m "Release package"
+          git push origin HEAD:production
+          git push origin :production-temp
