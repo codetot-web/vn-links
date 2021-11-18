@@ -30,6 +30,6 @@ jobs:
           ref: production
       - name: Release package
         run: |
-          git merge origin/production-temp --no-ff --no-edit -m "Release package"
+          git merge origin/production-temp --no-ff --no-edit --allow-unrelated-histories -m "Release package"
           git push origin HEAD:production
           git push origin :production-temp
