@@ -16,6 +16,7 @@ jobs:
           git config --global user.name "CODE TOT JSC"
           git config --global user.email "dev@codetot.com"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git remote -v
       - name: Remove unused files and prepare package
         run: |
           git checkout -b temp
