@@ -27,6 +27,10 @@ We build this minimal feature to improve the quality of this feature when using 
 
 - A custom block to embed in block editor.
 
+**Support and Contribute**
+
+Please open an issue or new Pull Requests in our [GitHub Repository](https://github.com/codetot-web/vn-links).
+
 == Installation ==
 
 1. Upload `vn-links.zip` to the `/wp-content/plugins/` directory
