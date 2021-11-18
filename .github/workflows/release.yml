@@ -22,10 +22,12 @@ jobs:
           git add -A
           git commit -am "Prepare production package"
           git push origin HEAD:production-temp --force
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.PAT }}
+          ref: production
       - name: Release package
         run: |
-          git checkout master
-          git reset --hard origin/production
           git merge origin/production-temp --no-ff --no-edit -m "Release package"
           git push origin HEAD:production
           git push origin :production-temp
