@@ -3,8 +3,8 @@ Contributors: codetot, khoipro
 Donate link: https://codetot.com
 Tags: widget, shortcode, links-manager, links, vn, codetot, vn-widgets
 Requires at least: 5.0.0
-Tested up to: 5.9
-Stable tag: 0.0.1
+Tested up to: 5.8
+Stable tag: 0.0.2
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
