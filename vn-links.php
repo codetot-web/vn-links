@@ -5,7 +5,7 @@
  * @package           Vn_Links
  *
  * @wordpress-plugin
- * Plugin Name:       Vietnam Links
+ * Plugin Name:       VN Links
  * Plugin URI:        https://github.com/codetot-web/vn-links
  * Description:       Manage external links and display links as dropdown in a single widget or block. One of most required feature for all government sites in Vietnam.
  * Requires at least: 5.0
